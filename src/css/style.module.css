@@ -1,0 +1,375 @@
+/*
+    ===============================
+            Public Styles
+    ===============================
+*/
+
+* , *:after , *:before {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: lucida sans ;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.margin-bottom {
+    margin-bottom: 20px
+}
+
+
+/*
+    ===============================
+            Navbar Styles
+    ===============================
+*/
+/* Navbar Styles */
+.navbar {
+    padding: 15px 0;
+    background: #222;
+    border-bottom: 1px solid #444;
+    font-family: 'Arial', sans-serif;
+}
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logoText {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .navbar .ulList {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .navbar .ulList .listItem {
+            margin-left: 20px;
+        }
+
+            .navbar .ulList .listItem a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                font-weight: bold;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                .navbar .ulList .listItem a:hover {
+                    background-color: #4A628A;
+                    color: #fff;
+                }
+
+/* Other styles are retained from your initial CSS */
+
+/* Styles réactifs pour les appareils mobiles */
+@media (max-width: 991px) {
+
+    .navbar .ulList {
+        flex-direction: column;
+        align-items: center;
+        background-color: #222;
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+    }
+
+        .navbar .ulList .listItem {
+            margin: 10px 0;
+        }
+}
+
+/*
+    ===============================
+            Home Styles
+    ===============================
+*/
+/* Home Section */
+.home {
+    height: 500px;
+    background: url('../../public/Etudier-linformatique.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4); /* Ajout d'ombre interne pour un meilleur contraste */
+}
+
+    .home .homeInformation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+        .home .homeInformation .homeTitle {
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px; /* Espacement sous le titre */
+        }
+
+        .home .homeInformation .homeInfo {
+            font-size: 40px; /* Plus grand pour attirer l'attention */
+            font-weight: bold; /* Pour donner du poids et de l'importance au texte */
+            color: cornflowerblue; /* Texte blanc pour contraster sur le fond */
+            background: linear-gradient(45deg, #3b79f0, #28a745); /* Dégradé bleu-vert */
+            background-clip: text; /* Applique le dégradé seulement sur le texte */
+            -webkit-background-clip: text; /* Pour la compatibilité avec Safari */
+            text-fill-color: transparent; /* Permet de rendre le texte transparent pour que le fond le traverse */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Ombre douce pour améliorer la lisibilité */
+            margin-bottom: 20px; /* Espacement sous le texte */
+            padding: 15px; /* Ajoute un peu de padding pour plus d'air autour du texte */
+            border-radius: 10px; /* Coins arrondis pour un design plus doux */
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4; /* Espacement entre les lignes pour une meilleure lisibilité */
+        }
+
+            /* Ajouter un effet au survol */
+            .home .homeInformation .homeInfo:hover {
+                transform: scale(1.05); /* Légère augmentation de taille au survol */
+                transition: transform 0.3s ease; /* Transition douce pour l'effet */
+                text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); /* Ombre plus marquée au survol */
+            }
+
+
+        .home .homeInformation .homeDesc {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #ddd; /* Gris clair pour un contraste doux */
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent pour améliorer la lisibilité */
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+            .home .homeInformation .homeDesc span {
+                color: #fff; /* Accentuer le texte en span avec du blanc */
+            }
+
+        .home .homeInformation .homeBtn {
+            background: cornflowerblue; /* Vert pour le bouton */
+            color: #fff; /* Texte du bouton en blanc */
+            font-size: 18px;
+            width: 150px;
+            border: 0;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+            .home .homeInformation .homeBtn:hover {
+                background: #7AB2D3 ;
+                color: white; /* Vert foncé au survol */
+            }
+
+/* Upload CV Section */
+.upload-cv-message {
+    font-size: 18px;
+    color: #f7f7f7; /* Blanc cassé pour un texte lisible et doux */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Media Queries for Home Section */
+@media (max-width: 768px) {
+    .home .homeInformation .homeTitle {
+        font-size: 40px;
+        color: white;
+    }
+
+    .home .homeInformation .homeInfo {
+        font-size: 24px;
+    }
+
+    .home .homeInformation .homeDesc {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .home .homeInformation .homeTitle {
+        font-size: 30px;
+    }
+
+    .home .homeInformation .homeInfo {
+        font-size: 18px;
+    }
+
+    .home .homeInformation .homeDesc {
+        font-size: 14px;
+    }
+
+    .home .homeInformation .homeBtn {
+        width: 120px;
+        font-size: 16px;
+    }
+
+    .upload-cv-message {
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* Style général du footer */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+    /* Liens et texte dans le footer */
+    .footer p {
+        color: #bbb;
+        margin: 10px 0;
+    }
+
+    /* Liens interactifs */
+    .footer a {
+        color: #3498db;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+        .footer a:hover {
+            color: #1abc9c;
+        }
+
+/* Section des icônes sociales */
+.social-icons {
+    margin: 20px 0;
+}
+
+    .social-icons a {
+        color: #fff;
+        font-size: 24px;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+        .social-icons a:hover {
+            color: #3498db;
+        }
+
+/* Ajout d'un style pour les informations de contact */
+.footer-contact {
+    margin: 15px 0;
+}
+
+    .footer-contact p {
+        margin: 5px 0;
+    }
+
+/* Responsivité pour les petites écrans */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+}
+
+
+
+.opportunities {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.workTitle {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px ;
+    width: 300px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.cardImg {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cardContent {
+    padding: 15px;
+}
+
+.cardTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.jobDescription {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.applyBtn {
+    background-color: cornflowerblue;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 15px auto;
+    display: block;
+}
+
+    .applyBtn:hover {
+        background-color: #7AB2D3;
+    }
