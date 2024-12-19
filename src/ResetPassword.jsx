@@ -38,7 +38,8 @@ function ResetPassword() {
 
     return (
          <>
-           
+            <Navbar />
+
         <div style={{ height: "100vh", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#f9f9f9" }}>
             <ToastContainer />
             <Components.Container>
@@ -63,7 +64,9 @@ function ResetPassword() {
                 </Components.Form>
             </Components.Container>
             </div>
-       
+            <div>
+                <Footer />
+            </div>
         </>
     );
 }

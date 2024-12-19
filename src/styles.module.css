@@ -13,3 +13,14 @@
     font-family: "Montserrat", sans-serif;
     height: 100vh;
 }
+.forgotPasswordLink {
+    color: #131010; /* Couleur bleue typique des liens */
+    cursor: pointer; /* Change le curseur en forme de main */
+    text-decoration: none; /* Pas de soulignement par défaut */
+    transition: color 0.3s ease; /* Animation douce pour le changement de couleur */
+}
+
+    .forgotPasswordLink:hover {
+        text-decoration: underline; /* Ajoute le soulignement au survol */
+        color: #0056b3; /* Couleur légèrement plus foncée pour l'effet survol */
+    }

@@ -37,8 +37,10 @@ export default function CV() {
 
     // Handle file selection
     const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
-    };
+const file = event.target.files[0];
+    if (file) {
+        setSelectedFile(file);
+    }    };
 
     // Upload CV
     const handleUpload = async () => {
@@ -57,7 +59,13 @@ export default function CV() {
             fetchCVs();
         } catch (error) {
             console.error("Error uploading file:", error);
-            toast.error("Error uploading the file.");
+
+            // Gestion spécifique pour l'erreur 409 (CV déjà existant)
+            if (error.response && error.response.status === 409) {
+                toast.error("Ce CV existe déjà. Veuillez choisir un autre fichier.");
+            } else {
+                toast.error("Erreur lors du téléchargement du fichier.");
+            }
         }
     };
 
@@ -76,8 +84,7 @@ export default function CV() {
     return (
         <div style={{ display: "flex" }}>
             <Sidebar />
-            <div style={{ flexGrow: 1 }}>
-                <Navbar />
+            <div style={{ flexGrow: 1, marginTop: "60px" }}>
                 <div style={{ padding: "20px" }}>
                     <h1 style={{ marginBottom: "20px" }}>Manage Your CVs</h1>
 
@@ -90,6 +97,7 @@ export default function CV() {
                         >
                             Upload Files
                             <input
+                                key={selectedFile ? selectedFile.name : "input-reset"}
                                 type="file"
                                 hidden
                                 onChange={handleFileChange}

@@ -9,7 +9,7 @@ function Footer() {
                 <div className={styles.footerContact}>
                     <p>
                         <strong>Email:</strong>{' '}
-                        <a href="mailto:sofienamal@email.com">sofienamal@email.com</a>
+                        <a href="mailto:SaOpportunities@email.com">SaOpportunities@email.com</a>
                     </p>
                     <p>
                         <strong>Phone:</strong> +216 123 456 789

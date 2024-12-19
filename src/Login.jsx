@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+ï»¿import React, { useState, useEffect } from "react";
 import axios from "axios";
 import * as Components from "./Components";
 import styles from "./styles.module.css";
@@ -28,8 +28,7 @@ function Login() {
     useEffect(() => {
         const storedEmail = localStorage.getItem("userEmail");
         if (storedEmail) {
-            toast.info("Vous êtes déjà connecté. Redirection...");
-            navigate("/CV"); // Redirige vers la page appropriée
+            navigate("/login"); // Redirige vers la page appropriÃ©e
         }
     }, [navigate]);
 
@@ -95,9 +94,9 @@ function Login() {
                 email,
                 password,
             });
-            localStorage.setItem("userEmail", email); // Stockez l'email de l'utilisateur connecté
+            localStorage.setItem("userEmail", email); // Stockez l'email de l'utilisateur connectÃ©
             toast.success("Login successful!");
-            navigate("/CV");
+            navigate("/");
         } catch (error) {
             toast.error(
                 error.response?.data?.message || "Login failed. Please try again."
@@ -105,7 +104,7 @@ function Login() {
         }
     };
 
-    // Mot de passe oublié
+    // Mot de passe oubliÃ©
     const handleForgotPassword = async () => {
         if (!isValidEmail(email)) {
             toast.error("Please enter a valid email address.");
@@ -173,9 +172,12 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <Components.Anchor onClick={handleForgotPassword}>
-                            Forgot your password?
-                        </Components.Anchor>
+                            <Components.Anchor
+                                className={styles.forgotPasswordLink}
+                                onClick={handleForgotPassword}
+                            >
+                                Forgot your password?
+                            </Components.Anchor>
                         <Components.Button type="submit">Sign In</Components.Button>
                     </Components.Form>
                 </Components.SignInContainer>
